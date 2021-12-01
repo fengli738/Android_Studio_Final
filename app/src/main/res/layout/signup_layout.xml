@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00CC99">
+
+
+    <EditText
+        android:id="@+id/text4"
+        android:hint="Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:padding="8dp"
+        android:background="#fff" />
+
+    <EditText
+        android:id="@+id/text5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:padding="8dp"
+        android:background="#fff"
+        android:hint="Password"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/text4" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="#00CC99"
+        android:layout_below="@+id/text5"
+        android:layout_marginTop="17dp"
+        android:layout_alignStart="@+id/text5"
+        android:layout_alignEnd="@+id/text5" />
+
+    <Button
+        android:id="@+id/signed_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="#00CC99"
+        android:layout_below="@+id/b2"
+        android:layout_marginTop="17dp"
+        android:layout_alignStart="@+id/text5"
+        android:layout_alignEnd="@+id/text5" />
+
+</RelativeLayout>

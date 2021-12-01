@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_below="@+id/editTextTextReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Appointment" />
+
+    <Button
+        android:id="@+id/button_back_schedule"
+        android:layout_below="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+    <EditText
+        android:id="@+id/editTextTextReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendar_date_pick"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/calendar_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date select:" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select on Calendar"
+        android:id="@+id/calendar_date_pick"
+        android:layout_below="@+id/calendar_date">
+    </Button>
+
+    <Button
+        android:id="@+id/addReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendar_date_pick"
+        android:layout_toEndOf="@+id/editTextTextReason"
+        android:layout_marginLeft="50dp"
+        android:text="ADD" />
+
+
+</RelativeLayout>
