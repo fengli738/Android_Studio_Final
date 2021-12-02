@@ -83,7 +83,7 @@ public class Login extends AppCompatActivity {
 
                         username.setError(null);
                         String UsernameDB = snapshot.child(userEntered).child("username").getValue(String.class);
-                        Intent intent = new Intent(Login.this, Scheduler.class);
+                        Intent intent = new Intent(Login.this, ProviderPick.class);
                         intent.putExtra("username", UsernameDB);
                         startActivity(intent);
                     }else{

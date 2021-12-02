@@ -29,6 +29,7 @@
         <activity android:name=".Scheduler_view"></activity>
         <activity android:name=".Scheduler_create"></activity>
         <activity android:name=".Calendar_picker"></activity>
+        <activity android:name=".ProviderPick"></activity>
     </application>
 
 </manifest>

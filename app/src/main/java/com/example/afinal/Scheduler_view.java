@@ -25,7 +25,7 @@ import java.util.List;
 
 public class Scheduler_view extends AppCompatActivity {
     DatabaseReference reference;
-    String _USERNAME;
+    String _USERNAME, Provider;
     private RecyclerView recyclerView;
     private ScheduleReader reader;
     private List<Date> dateList;
@@ -36,6 +36,8 @@ public class Scheduler_view extends AppCompatActivity {
 
         Intent intent = getIntent();
         _USERNAME = intent.getStringExtra("username");
+        Provider = intent.getStringExtra("provider");
+        String identify = _USERNAME + "_" + Provider;
 
         recyclerView = findViewById(R.id.date_list);
         recyclerView.setHasFixedSize(true);
@@ -48,7 +50,7 @@ public class Scheduler_view extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("scheduler");
         // SELECT FROM USER
         Query query = FirebaseDatabase.getInstance().getReference("scheduler")
-                .orderByChild("username").equalTo(_USERNAME);
+                .orderByChild("identify").equalTo(identify);
         query.addListenerForSingleValueEvent(valueEventListener);
 
     }

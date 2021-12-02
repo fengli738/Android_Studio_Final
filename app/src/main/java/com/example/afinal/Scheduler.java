@@ -19,7 +19,7 @@ public class Scheduler extends AppCompatActivity {
     DatabaseReference reference;
     TextView user;
     Button scheduler_view, create_scheduler;
-    String _USERNAME;
+    String _USERNAME, Provider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,7 @@ public class Scheduler extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent( Scheduler.this, Scheduler_view.class);
                 intent.putExtra("username", _USERNAME);
+                intent.putExtra("provider", Provider);
                 startActivity(intent);
             }
         });
@@ -46,6 +47,7 @@ public class Scheduler extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent( Scheduler.this, Scheduler_create.class);
                 intent.putExtra("username", _USERNAME);
+                intent.putExtra("provider", Provider);
                 startActivity(intent);
             }
         });
@@ -55,6 +57,7 @@ public class Scheduler extends AppCompatActivity {
     private void showUser(){
         Intent intent = getIntent();
         _USERNAME = intent.getStringExtra("username");
+        Provider = intent.getStringExtra("provider");
         user.setText("Hello " + _USERNAME);
     }
 

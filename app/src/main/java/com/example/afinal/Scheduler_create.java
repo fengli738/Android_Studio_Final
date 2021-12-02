@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Scheduler_create extends AppCompatActivity {
 
     Button Btn, Btn_pick, addReason, back_schedule;
-    String _USERNAME;
+    String _USERNAME, Provider;
     String date1;
     String reason1;
     TextView dateSelect;
@@ -42,6 +42,7 @@ public class Scheduler_create extends AppCompatActivity {
 
         Intent intent = getIntent();
         _USERNAME = intent.getStringExtra("username");
+        Provider = intent.getStringExtra("provider");
         date1 = intent.getStringExtra("date");
         reasonType.setText(reason1);
 
@@ -55,8 +56,10 @@ public class Scheduler_create extends AppCompatActivity {
                 String reason = reason1;
                 String date = date1;
                 String username = _USERNAME;
+                String provider = Provider;
+                String identify = _USERNAME + "_" +Provider;
 
-                SchedulerHelper schedulerHelper = new SchedulerHelper(date, reason, username);
+                SchedulerHelper schedulerHelper = new SchedulerHelper(date, reason, username, provider, identify);
                 reference.child(reason).setValue(schedulerHelper);
 
                 Toast.makeText(Scheduler_create.this, "Appointment Added",
@@ -70,6 +73,7 @@ public class Scheduler_create extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent1 = new Intent(Scheduler_create.this, Calendar_picker.class);
                 intent1.putExtra("username", _USERNAME);
+                intent1.putExtra("provider", Provider);
                 startActivity(intent1);
             }
         });
@@ -94,6 +98,7 @@ public class Scheduler_create extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(Scheduler_create.this, Scheduler.class);
                 intent2.putExtra("username", _USERNAME);
+                intent2.putExtra("provider", Provider);
                 startActivity(intent2);
             }
         });

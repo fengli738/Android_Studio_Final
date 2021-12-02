@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Calendar_picker extends AppCompatActivity {
 
     private CalendarView mCalendarView;
-    String _USERNAME;
+    String _USERNAME, Provider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class Calendar_picker extends AppCompatActivity {
         mCalendarView = (CalendarView) findViewById(R.id.calendar_date_picker);
         Intent intent = getIntent();
         _USERNAME = intent.getStringExtra("username");
+        Provider = intent.getStringExtra("provider");
 
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -28,6 +29,7 @@ public class Calendar_picker extends AppCompatActivity {
                 Intent intent = new Intent(Calendar_picker.this, Scheduler_create.class);
                 intent.putExtra("date", date);
                 intent.putExtra("username", _USERNAME);
+                intent.putExtra("provider", Provider);
                 startActivity(intent);
 
             }
