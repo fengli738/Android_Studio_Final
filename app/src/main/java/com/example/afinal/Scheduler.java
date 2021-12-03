@@ -18,7 +18,7 @@ public class Scheduler extends AppCompatActivity {
 
     DatabaseReference reference;
     TextView user;
-    Button scheduler_view, create_scheduler;
+    Button scheduler_view, create_scheduler, back_provider, log_off;
     String _USERNAME, Provider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,8 @@ public class Scheduler extends AppCompatActivity {
         user = findViewById(R.id.textView3);
         scheduler_view = findViewById(R.id.button2);
         create_scheduler = findViewById(R.id.button4);
+        back_provider = findViewById(R.id.button5);
+        log_off = findViewById(R.id.button6);
 
         showUser();
 
@@ -48,6 +50,22 @@ public class Scheduler extends AppCompatActivity {
                 Intent intent = new Intent( Scheduler.this, Scheduler_create.class);
                 intent.putExtra("username", _USERNAME);
                 intent.putExtra("provider", Provider);
+                startActivity(intent);
+            }
+        });
+        back_provider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Scheduler.this, ProviderPick.class);
+                intent.putExtra("username", _USERNAME);
+                startActivity(intent);
+            }
+        });
+
+        log_off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Scheduler.this, Login.class);
                 startActivity(intent);
             }
         });

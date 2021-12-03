@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="20dp"/>
+        android:textSize="22dp"/>
 
     <Button
         android:id="@+id/button2"
@@ -25,4 +25,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button2"
         android:text="Create Schedule" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button4"
+        android:text="Back To Provider" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button5"
+        android:text="Log off" />
 </RelativeLayout>

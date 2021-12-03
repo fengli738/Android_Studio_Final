@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Final</string>
+    <string name="twitter_consumer_key">la3S6ki1aiyut5ZsNg4jN8LGT</string>
+    <string name="twitter_consumer_secret">uJyJSOiG8EgDjImm6a6hxhuCz9p5gBy1WwUqK8MLqIB0UtfvC5</string>
 </resources>

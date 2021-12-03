@@ -54,4 +54,15 @@
         android:layout_below="@+id/b1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp" />
+
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:id="@+id/twitter_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/text3"
+        android:text="TWitter Login"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
