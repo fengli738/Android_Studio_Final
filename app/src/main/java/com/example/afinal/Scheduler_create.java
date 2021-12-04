@@ -2,6 +2,8 @@ package com.example.afinal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -25,6 +27,20 @@ public class Scheduler_create extends AppCompatActivity {
     EditText reasonType;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    private String blockCharacterSet = "/~#^|$%&*!";
+
+    private InputFilter filter = new InputFilter() {
+
+
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+
+            if (source != null && blockCharacterSet.contains(("" + source))) {
+                return "";
+            }
+            return null;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +61,7 @@ public class Scheduler_create extends AppCompatActivity {
         Provider = intent.getStringExtra("provider");
         date1 = intent.getStringExtra("date");
         reasonType.setText(reason1);
+        reasonType.setFilters(new InputFilter[] { filter });
 
         dateSelect.setText(date1);
         Btn.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +102,8 @@ public class Scheduler_create extends AppCompatActivity {
                 if(reason1.matches("")){
                     Toast.makeText(Scheduler_create.this, "Nothing added please add again",
                             Toast.LENGTH_LONG).show();
-                }else{
+                }
+                else{
                     Toast.makeText(Scheduler_create.this, "Reason added",
                             Toast.LENGTH_LONG).show();
                     Btn.setEnabled(true);
@@ -102,5 +120,7 @@ public class Scheduler_create extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
+
     }
 }
